@@ -32,24 +32,30 @@
         <h1 class="title">To Do List</h1>
       </ion-header-bar>
       <ion-content>
-     
+
+  
           <ion-view title="About">
               <ion-content>
 
-                  <p>
-                      Display taskOne -   {{ taskList.taskOne }} <br />
-                      Display taskTwo -   {{ taskList.taskTwo }} <br />
-                      Display taskThree -   {{ taskList.taskThree }} <br />
-                      Display taskFour -   {{ taskList.taskFour }} <br />
-                      Display taskFive -   {{ taskList.taskFive }} <br />
-                      Display taskSix -   {{ taskList.taskSix }} <br />
-                      Display taskSeven -   {{ taskList.taskSeven }} <br />
-                      Display taskEight -   {{ taskList.taskEight }} <br />
-                      Display taskNine -   {{ taskList.taskNine }} <br />
-                      Display taskTen -   {{ taskList.taskTen }} <br />
-                  </p>
-                      
-              </ion-content>
+                  <div id="NewTaskDiv" class="header">
+                      <input type="text" id="newTask" placeholder="New Task..."> <br />
+                      <span onclick="newTask()" class="addBtn">Add</span> 
+                  </div>
+
+                  <ul id="myUL">
+                      <li> Display taskOne -   {{ taskList.taskOne }} </li>
+                      <li> Display taskTwo -   {{ taskList.taskTwo }} </li>
+                      <li> Display taskThree -   {{ taskList.taskThree }} </li>
+                      <li> Display taskFour -   {{ taskList.taskFour }} </li>
+                      <li> Display taskFive -   {{ taskList.taskFive }} </li>
+                      <li> Display taskSix -   {{ taskList.taskSix }} </li>
+                      <li> Display taskSeven -   {{ taskList.taskSeven }} </li>
+                      <li> Display taskEight -   {{ taskList.taskEight }} </li>
+                      <li> Display taskNine -   {{ taskList.taskNine }} </li>
+                      <li> Display taskTen -   {{ taskList.taskTen }} </li>       
+                  </ul>
+
+</ion-content>
           </ion-view>
 
       </ion-content>
