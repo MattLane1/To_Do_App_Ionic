@@ -7,7 +7,7 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+      
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -30,6 +30,7 @@
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">To Do List</h1>
+
       </ion-header-bar>
       <ion-content>
 
@@ -38,27 +39,67 @@
               <ion-content>
 
                   <div id="NewTaskDiv" class="header">
-                      <input type="text" id="newTask" placeholder="New Task..."> <br />
-                      <span onclick="newTask()" class="addBtn">Add</span> 
+                      <input type="text" id="addTask" placeholder="New Task..."> <br />
+                      <button onclick="newTask()">Add...</button> 
                   </div>
 
                   <ul id="myUL">
-                      <li> Display taskOne -   {{ taskList.taskOne }} </li>
-                      <li> Display taskTwo -   {{ taskList.taskTwo }} </li>
-                      <li> Display taskThree -   {{ taskList.taskThree }} </li>
-                      <li> Display taskFour -   {{ taskList.taskFour }} </li>
-                      <li> Display taskFive -   {{ taskList.taskFive }} </li>
-                      <li> Display taskSix -   {{ taskList.taskSix }} </li>
-                      <li> Display taskSeven -   {{ taskList.taskSeven }} </li>
-                      <li> Display taskEight -   {{ taskList.taskEight }} </li>
-                      <li> Display taskNine -   {{ taskList.taskNine }} </li>
-                      <li> Display taskTen -   {{ taskList.taskTen }} </li>       
+                     
+                      <li class="myUL" id="taskOnne">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskOne }}</a>
+                      </li>
+                      <li class="myUL" id="taskTwo">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskTwo }}</a>
+                      </li>
+                      <li class="myUL" id="taskThree">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskThree }}</a>
+                      </li>
+                      <li class="myUL" id="taskFour">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskFour }}</a>
+                      </li>
+                      <li class="myUL" id="taskFive">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskFive }}</a>
+                      </li>
+                      <li class="myUL" id="taskSix">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskSix }}</a>
+                      </li>
+                      <li class="myUL" id="taskSeven">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskSeven }}</a>
+                      </li>
+                      <li class="myUL" id="taskEight">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskEight }}</a>
+                      </li>
+                      <li class="myUL" id="taskNine">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskNine }}</a>
+                      </li>
+                      <li class="myUL" id="taskTen">
+                          <a href="#" onclick="showAbout();"> {{ taskList.taskTen }}</a>
+                      </li>   
                   </ul>
+
+              <script>
+
+                  var tasks = [];
+                  
+
+                 function newTask()
+                 {
+                     //alert("ITWORKED!!");//Testing purposes only
+                     tasks.push(document.getElementById("addTask").value);//Add a new task to the array
+                     document.getElementById("addTask").value = "";
+
+                     alert(tasks[0]);
+                 }
+
+
+              </script>
+
 
 </ion-content>
           </ion-view>
 
       </ion-content>
     </ion-pane>
+
   </body>
 </html>
