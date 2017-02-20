@@ -21,7 +21,7 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-
+     
     <!-- your app's js -->
     <script src="js/app.js"></script>
   </head>
@@ -38,61 +38,73 @@
           <ion-view title="About">
               <ion-content>
 
-                  <div id="NewTaskDiv" class="header">
-                      <input type="text" id="addTask" placeholder="New Task..."> <br />
-                      <button onclick="newTask()">Add...</button> 
-                  </div>
-
-                  <ul id="myUL">
+                  <div id="NewTaskDiv" class="header" ng-controller="TaskController">
+                      <input type="text" id="addTask" placeholder="New Task..."> <br /> 
+                      <button onclick="{{ taskList.taskOne }} = "hi"> New</button>
+                      <button onclick="alert(taskList.taskOne)"> TEST</button>
                      
-                      <li class="myUL" id="taskOnne">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskOne }}</a>
-                      </li>
-                      <li class="myUL" id="taskTwo">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskTwo }}</a>
-                      </li>
-                      <li class="myUL" id="taskThree">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskThree }}</a>
-                      </li>
-                      <li class="myUL" id="taskFour">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskFour }}</a>
-                      </li>
-                      <li class="myUL" id="taskFive">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskFive }}</a>
-                      </li>
-                      <li class="myUL" id="taskSix">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskSix }}</a>
-                      </li>
-                      <li class="myUL" id="taskSeven">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskSeven }}</a>
-                      </li>
-                      <li class="myUL" id="taskEight">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskEight }}</a>
-                      </li>
-                      <li class="myUL" id="taskNine">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskNine }}</a>
-                      </li>
-                      <li class="myUL" id="taskTen">
-                          <a href="#" onclick="showAbout();"> {{ taskList.taskTen }}</a>
-                      </li>   
-                  </ul>
 
-              <script>
+                  </div>
+                          <ul id="myUL" ng-controller="TaskController">
 
-                  var tasks = [];
-                  
+     
+                              <li class="myUL" id="taskOne">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskOne }}</a>
+                              </li>
 
-                 function newTask()
-                 {
-                     //alert("ITWORKED!!");//Testing purposes only
-                     tasks.push(document.getElementById("addTask").value);//Add a new task to the array
-                     document.getElementById("addTask").value = "";
+                              <li class="myUL" id="taskTwo">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskTwo }}</a>
+                              </li>
+                              <li class="myUL" id="taskThree">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskThree }}</a>
+                              </li>
+                              <li class="myUL" id="taskFour">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskFour }}</a>
+                              </li>
+                              <li class="myUL" id="taskFive">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskFive }}</a>
+                              </li>
+                              <li class="myUL" id="taskSix">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskSix }}</a>
+                              </li>
+                              <li class="myUL" id="taskSeven">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskSeven }}</a>
+                              </li>
+                              <li class="myUL" id="taskEight">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskEight }}</a>
+                              </li>
+                              <li class="myUL" id="taskNine">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskNine }}</a>
+                              </li>
+                              <li class="myUL" id="taskTen">
+                                  <a href="#" onclick="showAbout();"> {{ taskList.taskTen }}</a>
+                              </li>
+                          </ul>
 
-                     alert(tasks[0]);
-                 }
+                      <script>
 
+                          //Array to hold task list
+                          var tasks = [];
 
-              </script>
+      
+                          //Add a new task
+                          function newTask() {
+
+                              var scope = angular.element($("#myUL")).scope();
+                              scope.safeApply(function () {
+                                  taskList = "Superhero";
+                              })
+
+                              //Get the string and append it to the array
+                              //tasks.push(document.getElementById("addTask").value);
+                              
+                              //$scope.taskList = document.getElementById("addTask").value;
+
+                              //Testing
+                              alert("bang");
+                          }
+                          
+                      </script>
 
 
 </ion-content>

@@ -7,16 +7,7 @@ angular.module('starter', ['ionic'])
     .controller('TaskController', function ($scope) {
 
         $scope.taskList = {
-            "taskOne": "",
-            "taskTwo": "",
-            "taskThree": "",
-            "taskFour": "",
-            "taskFive": "",
-            "taskSix": "",
-            "taskSeven": "",
-            "taskEight": "",
-            "taskNine": "",
-            "taskTen": ""
+            "taskOne": "HELLO"
         };
 
    })
